@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container {
+    height: auto;
+    width: auto;
+    border: 2px solid black;
+    border-radius: 2vh;
+    margin: 5px 5px 5px 5px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.card{
+    background-color: aquamarine;
+    width: 200px;
+    padding: 20px;
+    border-radius: 2vh;
+    padding: 2vh;
+    margin: 2vh;
+}
