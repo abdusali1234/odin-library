@@ -35,7 +35,7 @@ function displayBooks(){
         </div>
         <div class="card-main">
             <p class="pages">Pages: ${book.pages} ${book.pages > 1 ? "pages" : "page"}</p>
-            <p class="read-status">Read: ${book.read ? "Read" : "Not Read"}</p>
+            <p class="read-status">Reading status: ${book.read ? "Read" : "Not Read"}</p>
         </div>
         <div class="card-footer">
             <div class="card-btn-container">
@@ -55,6 +55,7 @@ function addBookstoLibrary(book){
 function removeBook(index){
     myLibrary.splice(index, 1);
     displayBooks();
+    clearForm();
 }
 
 function toggleRead(index){
