@@ -27,17 +27,18 @@ function displayBooks(){
     myLibrary.forEach((book, index) => {
         let cardEl = document.createElement("div");
         cardEl.setAttribute("class", "card");
-        cardEl.setAttribute("id", index);
+        cardEl.setAttribute("id", `card-${index}`);
         cardEl.innerHTML = `
-        <div class="side-banner"></div>
-        <div class="card-body">
-            <div class="card-header">
-                <h2>${book.title}</h2>
-                <h3>By ${book.author}</h3>
-            </div>
-            <div class="card-main">
-                <p class="pages">Pages: ${book.pages} ${book.pages > 1 ? "pages" : "page"}</p>
-                <p class="read-status">Read: ${book.read ? "Read" : "Not Read"}</p>
+        <div class="card-header">
+            <h2>${book.title}</h2>
+            <h3>By ${book.author}</h3>
+        </div>
+        <div class="card-main">
+            <p class="pages">Pages: ${book.pages} ${book.pages > 1 ? "pages" : "page"}</p>
+            <p class="read-status">Read: ${book.read ? "Read" : "Not Read"}</p>
+        </div>
+        <div class="card-footer">
+            <div class="card-btn-container">
                 <button class="change-status" onclick="toggleRead(${index})">Mark as ${book.read ? " Not Read" : "Read"}</button>
                 <button class="remove-btn" onclick="removeBook(${index})">Remove</button>
             </div>
