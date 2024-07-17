@@ -30,10 +30,47 @@ main {
 }
 
 .card{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
     background-color: aquamarine;
     width: 200px;
     padding: 20px;
     border-radius: 2vh;
     padding: 2vh;
     margin: 2vh;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+dialog{
+    background-color: burlywood;
+    width: 30vw;
+    height: 50vh;
+    padding: 20px;
+    border-radius: 2vh;
+    padding: 2vh;
+    margin: 2vh;
+    position: absolute;
+    float: left;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+fieldset {
+    border-style: none;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+input {
+    height: 10%;
+    width: 50%;
+    margin: 0 auto;
 }
