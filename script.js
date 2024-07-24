@@ -91,8 +91,6 @@ const render = () => {
             render();
         });
     });
-
-    
 };
 
 newBtn.addEventListener("click", ()=>{
