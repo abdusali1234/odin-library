@@ -9,7 +9,6 @@ Book.prototype.toggleRead = function(){
     this.isRead =!this.isRead;
 }
 
-
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, true);
 const the5AmClub = new Book('The 5 AM Club', 'Robin Sharma', 314, false);
 const nineteenEightyFour = new Book('Nineteen Eighty Four', 'George Orwell', 328, true);
@@ -21,9 +20,6 @@ function addBooktoLibrary(title, author, pages, isRead){
     myLibrary.push(newBook);
     displayBooks();
 }
-
-
-
 
 function displayBooks(){
     const card_container = document.querySelector(".card-container");
@@ -54,10 +50,10 @@ function displayBooks(){
     });
 }
 
-
-
-const removeBtns = document.getElementsByClassName("remove-btn");
-const statusBtns = document.getElementsByClassName("change-status");
+displayBooks();
+// const removeBtns = document.getElementsByClassName("remove-btn");
+// Array.from(removeBtns).forEach((btn) => {console.log(btn)})
+// const statusBtns = document.getElementsByClassName("change-status");
 const newBtn = document.querySelector("#new-book");
 const dialog = document.querySelector("dialog");
 const bookEntry = document.querySelector('#book-entry');
@@ -69,20 +65,23 @@ function toggleRead(index){
     myLibrary[index].toggleRead();
 }
 
-Array.from(removeBtns).forEach((btn) => {
-    btn.addEventListener('click', () => {
-        const index = btn.getAttribute('data-index');
-        console.log("removing! book" + index);
+console.log(document.querySelectorAll(".remove-btn"));
+console.log(document.querySelectorAll(".change-status"));
+
+document.querySelectorAll(".remove-btn").forEach((removeBtn) => {
+    removeBtn.addEventListener('click', () => {
+        const index = removeBtn.getAttribute('data-index');
+        console.log("removing! book");
         myLibrary.splice(index, 1);
         displayBooks();
+    });
+});
 
-    })
-})
-
-Array.from(statusBtns).forEach((btn) => {
-    btn.addEventListener('click', () => {
-        const index = btn.getAttribute('data-index');
-        console.log("changing book" + index);
+document.querySelectorAll(".change-status").forEach((statusBtn) => {
+    statusBtn.addEventListener('click', () => {
+        const index = statusBtn.getAttribute('data-index');
+        console.log("changing book");
+        // myLibrary[index].isRead = !myLibrary[index].isRead;
         toggleRead(index);
         displayBooks();
     });
@@ -111,57 +110,5 @@ cancelBtn.addEventListener('click', (event) => {
 
 
 
-displayBooks();
-// function removeBook(index){
-//     
-//     displayBooks();
-//     clearForm();
-// }
 
-// function toggleRead(index){
-//     myLibrary[index].toggleRead();
-//     displayBooks();
-// }
-
-
-// const newBtn = document.querySelector("#new-book");
-// const dialog = document.querySelector("dialog");
-// const title = document.querySelector("#title").value;
-// const author = document.querySelector("#author").value;
-// const pages = document.querySelector("#pages").value;
-// const read = document.querySelector('#read').checked;
-// const bookEntry = document.querySelector('#book-entry');
-
-// const closeBtn = document.querySelector("#close");
-
-// function clearForm(){
-//     title.value = "";
-//     author.value = "";
-//     pages.value = null;
-//     read.checked = false;
-// }
-
-
-
-// addBook.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     if (title !== "" && author !== "" && pages){
-//         addBookstoLibrary(new Book(title, author, pages, read));
-//         bookEntry.reset();
-
-//         dialog.close();
-//         displayBooks();
-        
-//     }
-// });
-
-// closeBtn.addEventListener("click", (event) =>{
-//     event.preventDefault();
-//     bookEntry.reset();
-//     dialog.close();
-//     clearForm();
-    
-// });
-
-// displayBooks();
 
