@@ -18,7 +18,7 @@ const myLibrary = [theHobbit, the5AmClub, nineteenEightyFour];
 function addBooktoLibrary(title, author, pages, isRead){
     let newBook = new Book(title, author, pages, isRead);
     myLibrary.push(newBook);
-    displayBooks();
+    render();
 }
 
 function displayBooks(){
@@ -50,7 +50,7 @@ function displayBooks(){
     });
 }
 
-displayBooks();
+
 // const removeBtns = document.getElementsByClassName("remove-btn");
 // Array.from(removeBtns).forEach((btn) => {console.log(btn)})
 // const statusBtns = document.getElementsByClassName("change-status");
@@ -68,25 +68,32 @@ function toggleRead(index){
 console.log(document.querySelectorAll(".remove-btn"));
 console.log(document.querySelectorAll(".change-status"));
 
-document.querySelectorAll(".remove-btn").forEach((removeBtn) => {
-    removeBtn.addEventListener('click', () => {
-        const index = removeBtn.getAttribute('data-index');
-        console.log("removing! book");
-        myLibrary.splice(index, 1);
-        displayBooks();
-    });
-});
 
-document.querySelectorAll(".change-status").forEach((statusBtn) => {
-    statusBtn.addEventListener('click', () => {
-        const index = statusBtn.getAttribute('data-index');
-        console.log("changing book");
-        // myLibrary[index].isRead = !myLibrary[index].isRead;
-        toggleRead(index);
-        displayBooks();
+
+const render = () => {
+    displayBooks();
+
+    document.querySelectorAll(".remove-btn").forEach(removeBtn => {
+        removeBtn.addEventListener('click', () => {
+            const index = removeBtn.getAttribute('data-index');
+            console.log("removing! book");
+            myLibrary.splice(index, 1);
+            render();
+        });
     });
     
-});
+    document.querySelectorAll(".change-status").forEach(statusBtn => {
+        statusBtn.addEventListener('click', () => {
+            const index = statusBtn.getAttribute('data-index');
+            console.log("changing book");
+            // myLibrary[index].isRead = !myLibrary[index].isRead;
+            toggleRead(index);
+            render();
+        });
+    });
+
+    
+};
 
 newBtn.addEventListener("click", ()=>{
     dialog.showModal();
@@ -107,6 +114,10 @@ cancelBtn.addEventListener('click', (event) => {
     dialog.close();
     bookEntry.reset();
 })
+
+render();
+
+
 
 
 
