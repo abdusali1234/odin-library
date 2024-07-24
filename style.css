@@ -29,7 +29,7 @@ header {
 
 
 #new-book{
-    height: 7.5vh;
+    height: 10vh;
     width: 10vw;
     font-size: min(3vh, 3vw);
     background-color: rgb(236,221,174);
@@ -144,34 +144,22 @@ input {
 }
 
 #add,
-#close,
+#cancel,
 .change-status,
 .remove-btn {
     color: white;
     border-radius: 1vh;
     border-style: solid;
     height: minmax(3vh, 4vh);
-    width: 5vw;
+    width: 7.5vw;
 }
-
-/* #add,
-#close {
-    height: 3vh;
-    width: 5vw;
-}
-
-.change-status,
-.remove-btn {
-    height: 4vh;
-    width: 5vw;
-} */
 
 #add,
 .change-status {
     background-color: rgb(0,83,135);
 }
 
-#close,
+#cancel,
 .remove-btn {
     background-color: var(--spine-colour);
 }

@@ -15,7 +15,7 @@
         <div class="card-container"></div>
         <dialog>
             <h1>Add a book</h1>
-            <form>
+            <form id="book-entry">
                 <label for="title">Title</label>
                 <input type="text" name="title" id="title" required>
 
@@ -28,8 +28,8 @@
                 <label for="read">Read?</label>
                 <input type="checkbox" name="read" id="read">
                 <div class="dialog-btn-container">
-                    <input type="submit" id="add" value="Add Book">
-                    <input type="submit" id="close" value="Close">
+                    <button type="submit" id="add">Add Book</button>
+                    <button type="button" id="cancel">Cancel</button>
                 </div>
             </form>
         </dialog>
