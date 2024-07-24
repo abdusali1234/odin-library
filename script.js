@@ -1,13 +1,16 @@
-function Book(title, author, pages, isRead){
+class Book {
+    constructor(title, author, pages, isRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead =isRead;
+    };
+
+    toggleRead() {
+        this.isRead =!this.isRead;
+    };
 }
 
-Book.prototype.toggleRead = function(){
-    this.isRead =!this.isRead;
-}
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien', 295, true);
 const the5AmClub = new Book('The 5 AM Club', 'Robin Sharma', 314, false);
@@ -51,9 +54,7 @@ function displayBooks(){
 }
 
 
-// const removeBtns = document.getElementsByClassName("remove-btn");
-// Array.from(removeBtns).forEach((btn) => {console.log(btn)})
-// const statusBtns = document.getElementsByClassName("change-status");
+
 const newBtn = document.querySelector("#new-book");
 const dialog = document.querySelector("dialog");
 const bookEntry = document.querySelector('#book-entry');
