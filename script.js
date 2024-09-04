@@ -51,9 +51,7 @@ function displayBooks(){
 }
 
 
-// const removeBtns = document.getElementsByClassName("remove-btn");
-// Array.from(removeBtns).forEach((btn) => {console.log(btn)})
-// const statusBtns = document.getElementsByClassName("change-status");
+
 const newBtn = document.querySelector("#new-book");
 const dialog = document.querySelector("dialog");
 const bookEntry = document.querySelector('#book-entry');
@@ -65,8 +63,6 @@ function toggleRead(index){
     myLibrary[index].toggleRead();
 }
 
-console.log(document.querySelectorAll(".remove-btn"));
-console.log(document.querySelectorAll(".change-status"));
 
 
 
@@ -76,7 +72,6 @@ const render = () => {
     document.querySelectorAll(".remove-btn").forEach(removeBtn => {
         removeBtn.addEventListener('click', () => {
             const index = removeBtn.getAttribute('data-index');
-            console.log("removing! book");
             myLibrary.splice(index, 1);
             render();
         });
@@ -85,7 +80,6 @@ const render = () => {
     document.querySelectorAll(".change-status").forEach(statusBtn => {
         statusBtn.addEventListener('click', () => {
             const index = statusBtn.getAttribute('data-index');
-            console.log("changing book");
             // myLibrary[index].isRead = !myLibrary[index].isRead;
             toggleRead(index);
             render();
