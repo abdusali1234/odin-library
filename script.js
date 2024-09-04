@@ -97,8 +97,38 @@ newBtn.addEventListener("click", ()=>{
     dialog.showModal();
 });
 
+const bookTitle = document.getElementById("title");
+const authorName = document.getElementById("author");
+const bookPages = document.getElementById("pages");
+
+bookTitle.addEventListener("input", (event) =>{
+    if (bookTitle.validity.valueMissing){
+        bookTitle.setCustomValidity("Need a title mate!")
+    } else {
+        bookTitle.setCustomValidity("");
+    }
+});
+
+authorName.addEventListener("intput", (event) => {
+    if (authorName.validity.tooShort){
+        authorName.setCustomValidity("Too short son!")
+    } else {
+        authorName.setCustomValidity("");
+    }
+})
+
 bookEntry.addEventListener('submit', (event) => {
     event.preventDefault();
+    // if (bookTitle.validity.valueMissing){
+    //     bookTitle.setCustomValidity("Need a title mate!")
+    // } else {
+    //     bookTitle.setCustomValidity("");
+    // };
+    // if (authorName.validity.tooShort){
+    //     authorName.setCustomValidity("Too short son!")
+    // } else {
+    //     authorName.setCustomValidity("");
+    // };
     const title = this.title.value;
     const author = this.author.value;
     const pages = this.pages.value;

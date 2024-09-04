@@ -45,8 +45,8 @@ main {
 }
 
 .card-container {
-    height: auto;
-    width: auto;
+    height: 80vh;
+    width: 80vw;
     border: 2px solid black;
     border-radius: 2vh;
     margin: 5px 5px 5px 5px;
@@ -61,6 +61,7 @@ main {
     justify-content: space-evenly;
     background-color: var(--card-bg-colour);
     width: 200px;
+    height: 250px;
     padding: 20px;
     border-radius: 2vh;
     padding: 2vh;
